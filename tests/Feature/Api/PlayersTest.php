@@ -108,6 +108,18 @@ class PlayersTest extends TestCase
     /**
      * @test
      */
+    public function aGuestCantCreateAPlayer()
+    {
+        // During setup, we automatically log a default user in. For this test, they need to not be logged in.
+        Auth::logout();
+
+        $this->postJson(route('api.players.store'))
+            ->assertStatus(401);
+    }
+
+    /**
+     * @test
+     */
     public function itCanUpdateAPlayer()
     {
         $player       = factory(Player::class)->create();

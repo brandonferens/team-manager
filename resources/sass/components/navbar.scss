@@ -4,4 +4,12 @@ nav {
     .container {
         @apply flex items-center flex-no-shrink;
     }
+
+    a {
+        @apply text-base text-white;
+
+        &:hover {
+            @apply text-green-lighter;
+        }
+    }
 }

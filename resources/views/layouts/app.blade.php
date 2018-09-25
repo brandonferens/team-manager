@@ -21,13 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav>
-            <div class="container">
-                <i class="fas fa-futbol text-3xl mr-2"></i>
-
-                <span class="font-bold text-xl">Team Manager 2.0</span>
-            </div>
-        </nav>
+        @include('partials.navbar')
 
         <div class="container pt-8">
             @yield('content')

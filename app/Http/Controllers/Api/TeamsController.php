@@ -11,6 +11,14 @@ use App\Http\Controllers\Controller;
 class TeamsController extends Controller
 {
     /**
+     * TeamsController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth')->only(['store', 'update']);
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection

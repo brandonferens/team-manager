@@ -12,6 +12,14 @@ use App\Http\Controllers\Controller;
 class PlayersController extends Controller
 {
     /**
+     * PlayersController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param StorePlayerRequest $request

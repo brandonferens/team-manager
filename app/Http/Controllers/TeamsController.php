@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Team;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 
 class TeamsController extends Controller
 {
@@ -15,9 +13,6 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        //factory(User::class)->create(['email' => 'user@teams.io']);
-        //Auth::loginUsingId(1, true);
-
         return view('teams.index');
     }
 

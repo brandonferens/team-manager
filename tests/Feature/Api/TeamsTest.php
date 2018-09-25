@@ -111,6 +111,18 @@ class TeamsTest extends TestCase
     /**
      * @test
      */
+    public function aGuestCanViewAllTeams()
+    {
+        // During setup, we automatically log a default user in. For this test, they need to not be logged in.
+        Auth::logout();
+
+        $this->getJson(route('api.teams.index'))
+            ->assertStatus(200);
+    }
+
+    /**
+     * @test
+     */
     public function itReturnsTeamsWithRelatedPlayers()
     {
         // Create a team and attach a player.
@@ -138,6 +150,20 @@ class TeamsTest extends TestCase
                 ]
             )
             ->assertJsonCount($playerCount, 'players');
+    }
+
+    /**
+     * @test
+     */
+    public function aGuestCanViewATeamWithRelatedPlayers()
+    {
+        // During setup, we automatically log a default user in. For this test, they need to not be logged in.
+        Auth::logout();
+
+        $team = factory(Team::class)->create();
+
+        $this->getJson(route('api.teams.show', $team->slug))
+            ->assertStatus(200);
     }
 
     /**
