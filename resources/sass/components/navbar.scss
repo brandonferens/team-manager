@@ -1,0 +1,7 @@
+nav {
+    @apply sticky pin-t flex items-center justify-between h-20 bg-green-dark text-white;
+
+    .container {
+        @apply flex items-center flex-no-shrink;
+    }
+}

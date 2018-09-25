@@ -1,0 +1,15 @@
+body {
+    @apply text-lg text-grey-darkest font-sans font-normal antialiased relative;
+}
+
+.container {
+    @apply mx-auto p-4;
+}
+
+a {
+    @apply text-green-dark no-underline;
+
+    &:hover {
+        @apply text-green-darker underline;
+    }
+}

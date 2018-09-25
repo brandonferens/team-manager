@@ -1,0 +1,23 @@
+.button {
+    @apply inline-flex no-underline items-center justify-center bg-purple rounded text-white px-6 cursor-default h-10;
+
+    &:hover {
+        @apply text-white bg-purple-dark;
+    }
+
+    &.is-disabled {
+        @apply text-grey-lighter bg-grey-lightest cursor-not-allowed;
+    }
+
+    &.is-secondary {
+        @apply text-grey-darkest bg-grey-lighter;
+
+        &:hover {
+            @apply bg-grey-light;
+        }
+    }
+
+    & + .button {
+        @apply ml-2;
+    }
+}
